@@ -135,7 +135,7 @@ export default function Concierge() {
   return (
     <section
       id="concierge"
-      className="py-[160px] px-8 bg-surface"
+      className="bg-surface px-6 py-24 sm:px-8 md:py-32 lg:py-[140px]"
       aria-labelledby="concierge-heading"
     >
       <div className="max-w-2xl mx-auto">
@@ -147,7 +147,7 @@ export default function Concierge() {
           <span className="text-gold text-xs uppercase tracking-[0.5em] mb-4 block">Kontakt</span>
           <h2
             id="concierge-heading"
-            className="text-5xl md:text-6xl text-pearl font-heading mb-6 italic text-glow"
+            className="mb-6 font-heading text-4xl italic text-pearl text-glow sm:text-5xl md:text-6xl"
           >
             Zakazivanje konzultacije
           </h2>
@@ -163,7 +163,7 @@ export default function Concierge() {
               key="success"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-bg p-16 text-center border border-gold/20"
+              className="border border-gold/20 bg-bg p-8 text-center md:p-16"
               role="status"
             >
               <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-8">
@@ -315,15 +315,20 @@ export default function Concierge() {
           )}
         </AnimatePresence>
 
-        <footer className="mt-24 pt-24 border-t border-sage/10 text-center flex flex-col items-center gap-6">
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-3 text-[10px] text-sage uppercase tracking-[0.3em]">
-            <span>Sarajevo, Bosna i Hercegovina</span>
-            <a href="tel:+38733000000" className="hover:text-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 rounded-sm">
+        <footer className="mt-20 flex flex-col items-center gap-6 border-t border-sage/10 pt-16 text-center sm:mt-24 sm:pt-24">
+          <div className="flex max-w-xl flex-col items-center gap-y-4 text-[11px] uppercase tracking-[0.22em] text-sage sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-10 sm:gap-y-3 sm:text-xs sm:tracking-[0.28em] md:gap-x-12 md:tracking-[0.3em]">
+            <span className="inline-flex min-h-[2.75rem] items-center justify-center px-2 text-center sm:min-h-0">
+              Sarajevo, Bosna i Hercegovina
+            </span>
+            <a
+              href="tel:+38733000000"
+              className="inline-flex min-h-11 items-center rounded-sm px-4 py-2 transition-colors hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 md:min-h-10 md:px-5"
+            >
               +387 33 000 000
             </a>
             <a
               href="mailto:studio@smile.art"
-              className="hover:text-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 rounded-sm"
+              className="inline-flex min-h-11 items-center rounded-sm px-4 py-2 transition-colors hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 md:min-h-10 md:px-5"
             >
               studio@smile.art
             </a>

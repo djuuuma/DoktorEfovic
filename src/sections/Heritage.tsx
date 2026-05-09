@@ -12,7 +12,10 @@ export default function Heritage() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
   return (
-    <section ref={containerRef} className="h-screen flex items-center justify-center px-8 relative">
+    <section
+      ref={containerRef}
+      className="relative flex min-h-[100dvh] min-h-svh items-center justify-center px-6 py-20 sm:px-10 md:h-screen md:min-h-0 md:px-14 md:py-0 lg:px-16"
+    >
       <div className="absolute inset-0 overflow-hidden -z-10 bg-surface">
         <motion.div 
           style={{ opacity: 0.1 }}
@@ -24,12 +27,12 @@ export default function Heritage() {
 
       <motion.div 
         style={{ opacity, scale }}
-        className="max-w-4xl text-center"
+        className="max-w-xl text-center sm:max-w-2xl lg:max-w-4xl"
       >
-        <span className="text-gold text-xs uppercase tracking-[0.5em] mb-12 block">
+        <span className="mb-10 block font-body text-[11px] uppercase tracking-[0.4em] text-gold sm:text-xs md:mb-12 md:tracking-[0.5em]">
           Naša filozofija rada
         </span>
-        <h2 className="text-4xl md:text-6xl text-pearl leading-relaxed font-heading font-normal">
+        <h2 className="font-heading text-3xl font-normal leading-snug text-pearl sm:text-4xl md:leading-relaxed lg:text-6xl">
           Preciznost, savremeni pristup i <span className="italic text-gold">individualni plan</span> — za ishode koji
           traju.
         </h2>

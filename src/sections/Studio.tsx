@@ -2,52 +2,101 @@ import { motion, useTransform, useScroll } from 'motion/react';
 import { useRef } from 'react';
 
 const images = [
-  "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200",
-  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200",
-  "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1200",
-  "https://images.unsplash.com/photo-1445527815219-ecbfec67492e?auto=format&fit=crop&q=80&w=1200"
+  'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200',
+  'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=1200',
+  'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1200',
+  'https://images.unsplash.com/photo-1445527815219-ecbfec67492e?auto=format&fit=crop&q=80&w=1200',
 ];
 
-export default function Studio() {
+function StudioMobile() {
+  return (
+    <section className="bg-bg px-6 py-24 md:hidden" aria-labelledby="studio-heading-mobile">
+      <div className="mx-auto max-w-lg">
+        <span className="mb-4 block font-body text-xs uppercase tracking-[0.35em] text-gold">
+          Ordinacija
+        </span>
+        <h2 id="studio-heading-mobile" className="mb-6 font-heading text-4xl leading-tight tracking-tight text-pearl">
+          Radni <br />
+          <span className="italic">prostor</span>
+        </h2>
+        <p className="mb-14 max-w-md font-body text-base leading-relaxed text-sage">
+          Prostor je osmišljen da obezbjedi privatnost, miran ambijent i jasnu organizaciju tokom pregleda i
+          terapijskih postupaka.
+        </p>
+
+        {/* Intentional horizontal gallery: snaps, captions always visible */}
+        <div
+          className="-mx-1 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          style={{ scrollPaddingInline: '0.25rem' }}
+          aria-label="Galerija prostora ordinacije"
+        >
+          {images.map((src, i) => (
+            <figure
+              key={src}
+              className="w-[min(88vw,20rem)] shrink-0 snap-center first:scroll-ml-0"
+            >
+              <div className="relative aspect-[3/4] overflow-hidden bg-surface">
+                <img
+                  src={src}
+                  alt={`Ordinacija, fotografija ${i + 1} od ${images.length}`}
+                  className="h-full w-full object-cover grayscale"
+                  draggable={false}
+                />
+              </div>
+              <figcaption className="mt-3 font-body text-[11px] uppercase tracking-widest text-gold">
+                Fotografija prostora {(i + 1).toString().padStart(2, '0')}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="mt-4 text-center font-body text-[10px] uppercase tracking-[0.2em] text-sage/80">
+          Prevucite u stranu za više fotografija
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/** Desktop-only: sticky scroll-linked horizontal reel */
+function StudioDesktop() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-55%']);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-bg">
+    <section ref={targetRef} className="relative hidden h-[240vh] bg-bg md:block">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-12 px-24">
-          <div className="flex flex-col justify-center min-w-[500px]">
-            <span className="text-gold text-xs uppercase tracking-[0.5em] mb-4">
-              Ordinacija
-            </span>
-            <h2 className="text-7xl text-pearl font-heading mb-8">
+        <motion.div style={{ x }} className="flex gap-10 px-12 lg:gap-12 lg:px-24">
+          <div className="flex w-[min(42vw,28rem)] shrink-0 flex-col justify-center lg:w-[min(38vw,32rem)]">
+            <span className="mb-4 font-body text-xs uppercase tracking-[0.5em] text-gold">Ordinacija</span>
+            <h2 className="mb-8 font-heading text-5xl leading-[1.08] text-pearl lg:text-7xl">
               Radni <br />
               <span className="italic">prostor</span>
             </h2>
-            <p className="text-sage text-lg max-w-sm">
-              Prostor je osmišljen da obezbjedi privatnost, miran ambijent i jasnu organizaciju tokom pregleda i terapijskih postupaka.
+            <p className="max-w-sm font-body text-lg leading-relaxed text-sage">
+              Prostor je osmišljen da obezbjedi privatnost, miran ambijent i jasnu organizaciju tokom pregleda i
+              terapijskih postupaka.
             </p>
           </div>
-          
+
           {images.map((src, i) => (
             <motion.div
               key={i}
-              className="relative h-[70vh] min-w-[60vw] overflow-hidden bg-surface group"
+              className="group relative h-[min(70vh,36rem)] w-[min(52vw,28rem)] shrink-0 overflow-hidden bg-surface lg:h-[70vh] lg:w-[min(48vw,36rem)]"
               whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             >
               <img
                 src={src}
                 alt="Prikaz ordinacijskog prostora"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100"
+                className="h-full w-full object-cover opacity-80 grayscale transition-[transform,filter,opacity] duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
               />
-              <div className="absolute inset-x-0 bottom-0 p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-bg to-transparent">
-                <span className="text-gold text-xs uppercase tracking-widest font-body">
-                  Fotografija prostora 0{i + 1}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg via-bg/40 to-transparent p-6 pt-16 md:p-8 md:pt-20">
+                <span className="font-body text-xs uppercase tracking-widest text-gold">
+                  Fotografija prostora {(i + 1).toString().padStart(2, '0')}
                 </span>
               </div>
             </motion.div>
@@ -55,5 +104,14 @@ export default function Studio() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+export default function Studio() {
+  return (
+    <>
+      <StudioMobile />
+      <StudioDesktop />
+    </>
   );
 }

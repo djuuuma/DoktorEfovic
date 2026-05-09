@@ -23,31 +23,33 @@ const services = [
 
 export default function Craft() {
   return (
-    <section id="craft" className="py-[160px] px-8 md:px-24 bg-surface/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24">
+    <section id="craft" className="bg-surface/50 px-6 py-24 backdrop-blur-sm sm:px-8 md:px-24 lg:py-[160px]">
+      <div className="mx-auto flex max-w-7xl flex-col gap-16 lg:flex-row lg:gap-24">
         <div className="lg:w-1/2">
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="text-5xl md:text-7xl text-pearl mb-16 leading-[1.1] font-heading"
+            className="mb-12 font-heading text-4xl leading-[1.1] text-pearl md:mb-16 md:text-5xl lg:text-7xl"
           >
             Stručne <span className="text-gold italic">usluge</span>
           </motion.h2>
 
-          <div className="space-y-24">
+          <div className="space-y-16 lg:space-y-24">
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="group cursor-pointer"
+                className="group"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <span className="text-[10px] text-gold border border-gold/30 px-2 py-1 tracking-widest uppercase">{service.disciplina}</span>
                   <div className="h-[1px] w-12 bg-gold/30 group-hover:w-24 transition-all duration-500" />
                 </div>
-                <h3 className="text-4xl md:text-5xl text-pearl mb-4 italic group-hover:text-gold transition-colors duration-500">{service.title}</h3>
+                <h3 className="mb-4 font-heading text-3xl italic text-pearl transition-colors duration-500 group-hover:text-gold md:text-4xl lg:text-5xl">
+                  {service.title}
+                </h3>
                 <p className="text-sage text-lg max-w-md leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
@@ -67,7 +69,9 @@ export default function Craft() {
               className="w-full h-full object-cover mix-blend-overlay opacity-40 grayscale"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-gold opacity-50 font-heading text-8xl italic">SMILE</span>
+              <span className="font-heading text-5xl italic text-gold opacity-50 sm:text-6xl md:text-8xl">
+                SMILE
+              </span>
             </div>
           </motion.div>
         </div>

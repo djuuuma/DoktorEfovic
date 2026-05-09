@@ -46,21 +46,26 @@ export default function App() {
         style={{ scaleX }}
       />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full p-8 md:p-12 flex justify-between items-center z-50 mix-blend-difference">
+      {/* Navigation — blend mode only on desktop; mobile gets scrim for contrast */}
+      <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between border-b border-pearl/[0.06] bg-bg/72 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur-md md:border-b-0 md:bg-transparent md:pl-[max(3rem,env(safe-area-inset-left))] md:pr-[max(3rem,env(safe-area-inset-right))] md:pb-12 md:pt-[max(3rem,env(safe-area-inset-top))] md:backdrop-blur-none md:mix-blend-difference">
         <motion.button
           type="button"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={scrollToTop}
-          className="font-heading text-2xl text-pearl lowercase tracking-tighter cursor-pointer bg-transparent border-0 p-0 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold/80"
+          className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-start rounded-md border-0 bg-transparent px-3 py-2 font-heading text-2xl lowercase tracking-tighter text-pearl transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold/80 md:min-h-0 md:min-w-0 md:px-0 md:py-0"
           aria-label="Vrati se na vrh stranice"
         >
           smile.
         </motion.button>
-        <div className="flex gap-8 items-center">
-          <a href="#concierge" className="text-[10px] uppercase tracking-[0.3em] text-pearl hover:text-gold transition-colors">Zakazivanje</a>
-          <div className="w-12 h-[1px] bg-pearl/30" />
+        <div className="flex items-center gap-6 md:gap-8">
+          <a
+            href="#concierge"
+            className="inline-flex min-h-11 items-center px-4 font-body text-[10px] uppercase tracking-[0.28em] text-pearl transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold/80 md:min-h-0 md:px-0"
+          >
+            Zakazivanje
+          </a>
+          <div className="hidden h-px w-12 shrink-0 bg-pearl/30 md:block max-md:pointer-events-none" aria-hidden />
         </div>
       </nav>
 
@@ -77,7 +82,7 @@ export default function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.22 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-2 rounded-full border border-gold/40 bg-bg/85 px-5 py-2.5 text-[10px] uppercase tracking-[0.28em] text-pearl shadow-lg backdrop-blur-md hover:border-gold hover:text-gold transition-colors pointer-events-auto md:bottom-12"
+          className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] left-1/2 z-[60] flex min-h-11 -translate-x-1/2 items-center gap-2 rounded-full border border-gold/40 bg-bg/85 px-6 py-2.5 text-[10px] uppercase tracking-[0.28em] text-pearl shadow-lg backdrop-blur-md transition-colors hover:border-gold hover:text-gold pointer-events-auto md:bottom-12"
           aria-label="Vrati se na vrh stranice"
         >
           <ChevronUp className="size-4 text-gold" strokeWidth={1.75} aria-hidden />
