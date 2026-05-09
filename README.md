@@ -12,7 +12,6 @@ Requires [Node.js](https://nodejs.org/) (LTS).
 npm install
 ```
 
-Copy [.env.example](.env.example) to `.env.local` and set variables such as `GEMINI_API_KEY` where needed. Do not commit secret files.
 
 ```bash
 npm run dev
