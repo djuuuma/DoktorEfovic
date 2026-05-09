@@ -45,6 +45,9 @@ $RECYCLE.BIN/
 # Vite temporary config copies
 vite.config.*.timestamp-*
 
+# Cursor agent skills (local / machine-specific)
+.cursor/skills/
+
 # Editor (uncomment if you prefer not to share editor state)
 # .idea/
 # *.suo

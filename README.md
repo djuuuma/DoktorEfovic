@@ -1,54 +1,28 @@
 # Ordinacija Smile
 
-Marketing website for **Ordinacija Smile** — built with React, Vite, TypeScript, Tailwind CSS, and Three.js. Gemini-powered features use the Google GenAI SDK when configured.
+Public website for Ordinacija Smile, a dental practice. The experience is a single-page layout with a WebGL hero, scroll-driven storytelling sections (studio, services, heritage, and contact-style blocks), motion transitions, and a custom cursor—aimed at a calm, premium feel rather than a typical clinical template.
 
-## Repository
+**Stack:** React 19, Vite, TypeScript, Tailwind CSS v4, Three.js, and Motion. Optional Gemini features use `@google/genai` when API keys are configured.
 
-Source code: **[github.com/djuuuma/DoktorEfovic](https://github.com/djuuuma/DoktorEfovic)**
+## Local development
 
-From this machine, if `origin` is not set yet:
+Requires [Node.js](https://nodejs.org/) (LTS).
 
 ```bash
-git remote add origin https://github.com/djuuuma/DoktorEfovic.git
-git push -u origin main
+npm install
 ```
 
-- **Clone (HTTPS):** `git clone https://github.com/djuuuma/DoktorEfovic.git`
-- **Clone (SSH):** `git clone git@github.com:djuuuma/DoktorEfovic.git`
+Copy [.env.example](.env.example) to `.env.local` and set variables such as `GEMINI_API_KEY` where needed. Do not commit secret files.
 
-## Prerequisites
+```bash
+npm run dev
+```
 
-- [Node.js](https://nodejs.org/) (LTS recommended)
+The dev server runs on port **5173**.
 
-## Run locally
-
-1. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-2. Environment variables: copy [.env.example](.env.example) to `.env.local` and set your keys (at minimum `GEMINI_API_KEY` if you use Gemini features). Never commit `.env.local` or real secrets.
-
-3. Start the dev server:
-
-   ```bash
-   npm run dev
-   ```
-
-   The app is configured to listen on port **5173** (see `package.json`).
-
-## Scripts
-
-| Command        | Description              |
-|----------------|--------------------------|
-| `npm run dev`  | Dev server (Vite)        |
-| `npm run build`| Production build → `dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Typecheck (`tsc --noEmit`) |
-
-## Optional: Google AI Studio
-
-If you use [Google AI Studio](https://ai.google.dev/) to run or deploy the app, you can open the linked project when applicable: https://ai.studio/apps/b8578587-8f0b-4f7e-adbc-520286d072a2
-
-Secrets there are separate from your local `.env.local` file.
+| Command | Description |
+|--------|-------------|
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Typecheck with TypeScript (`tsc --noEmit`) |
