@@ -1,44 +1,16 @@
 import { motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { useReducedMotion } from '../hooks/useReducedMotion';
+import { useMobileLayout } from '../hooks/useMobileLayout';
 
 /** Hero ambience — muted, looped, not focal; content stays on top. */
 const HERO_VIDEO_ID_DESKTOP = '-deD1hXJAUU';
 /** YouTube video ID for narrow viewports (< md / 768px). Use a vertical or lighter clip if you like. */
 const HERO_VIDEO_ID_MOBILE = '-deD1hXJAUU';
 
-function useHeroVideoId(): string {
-  const [id, setId] = useState(() =>
-    typeof window !== 'undefined' &&
-    window.matchMedia('(max-width: 767px)').matches
-      ? HERO_VIDEO_ID_MOBILE
-      : HERO_VIDEO_ID_DESKTOP,
-  );
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 767px)');
-    const sync = () =>
-      setId(mq.matches ? HERO_VIDEO_ID_MOBILE : HERO_VIDEO_ID_DESKTOP);
-    sync();
-    mq.addEventListener('change', sync);
-    return () => mq.removeEventListener('change', sync);
-  }, []);
-  return id;
-}
-
-function useReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync = () => setReduced(mq.matches);
-    sync();
-    mq.addEventListener('change', sync);
-    return () => mq.removeEventListener('change', sync);
-  }, []);
-  return reduced;
-}
-
 export default function Exhibition() {
   const reducedMotion = useReducedMotion();
-  const heroVideoId = useHeroVideoId();
+  const isMobile = useMobileLayout();
+  const heroVideoId = isMobile ? HERO_VIDEO_ID_MOBILE : HERO_VIDEO_ID_DESKTOP;
 
   const embedSrc =
     `https://www.youtube-nocookie.com/embed/${heroVideoId}` +
