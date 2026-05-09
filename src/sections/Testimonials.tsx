@@ -1,26 +1,26 @@
 import { motion } from 'motion/react';
 
-// TODO: Replace with real patient testimonials.
-// Each entry: a quote (max ~280 chars works best), the patient's first name + last initial, and the procedure they had.
-// Always get written consent before publishing.
+// TODO: Replace with real patient testimonials when available.
+// Each entry: a quote (~280 chars works best), patient's first name + last initial, and the treatment.
+// Always obtain written consent before publishing.
 const testimonials = [
   {
     quote:
-      'Od prvog pregleda do kontrole, sve je bilo pažljivo objašnjeno. Bez žurbe, bez pritiska. Nikad mi nije bilo prijatnije kod stomatologa.',
+      'Folije sam nosila gotovo cijeli dan i ljudi to nisu primjećivali. Kontrole su bile rijetke, ali svaki put sam tačno znala šta dolazi i koliko je još do kraja.',
     name: 'Lejla H.',
-    procedure: 'Keramički viniri',
+    procedure: 'Prozirne folije / Aligneri',
   },
   {
     quote:
-      'Implant je urađen profesionalno, a oporavak je tekao tačno kako su mi rekli. Cijenim to što su me pripremili za svaku fazu.',
+      'Plan je objašnjen u detalje prije nego što je išta krenulo. Estetske bravice se gotovo ne primjećuju, a pomak je išao ujednačeno bez iznenađenja.',
     name: 'Adnan M.',
-    procedure: 'Implantološka rehabilitacija',
+    procedure: 'Estetski fiksni aparat',
   },
   {
     quote:
-      'Digitalna simulacija mi je pomogla da odlučim mirno. Vidjela sam šta dobijam, a rezultat se poklopio s prikazom.',
+      'Imala sam iskustvo s drugom ordinacijom prije, gdje sam izlazila sa više pitanja nego odgovora. Ovdje sam dobila 3D prikaz i jasan vremenski okvir od prve konzultacije.',
     name: 'Selma B.',
-    procedure: 'Digitalno planiranje osmijeha',
+    procedure: 'Ortodontski plan i 3D dijagnostika',
   },
 ];
 

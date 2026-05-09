@@ -2,22 +2,22 @@ import { motion } from 'motion/react';
 
 const services = [
   {
-    title: 'Keramički viniri',
+    title: 'Prozirne folije / Aligneri',
     description:
-      'Individualno izrađeni porcelanski viniri s naglaskom na boju, obrise i translucenciju prirodnih zuba. Funkciju i izgled definiraju kliničko stanje te vaša očekivanja.',
-    disciplina: 'ESTETIKA',
+      'Diskretan sistem za odrasle i tinejdžere — prozirne folije izrađene po individualnom 3D planu. Folije se mijenjaju u definisanim intervalima i nose tokom dana, uz minimalan utjecaj na svakodnevicu.',
+    disciplina: 'ORTODONCIJA',
   },
   {
-    title: 'Digitalno planiranje osmijeha',
+    title: 'Estetski fiksni aparati',
     description:
-      'Detaljni pregled ishoda uz digitalne prikaze prije početka terapije. Plan se usklađuje dijagnostikom i dugoročno održivim rješenjem.',
+      'Estetske bravice i samoligirajući sistemi za precizno vođenje pomaka. Vidljivost je svedena na minimum, a kontrole se planiraju u ritmu koji odgovara vašem rasporedu i kliničkom napretku.',
+    disciplina: 'FIKSNI SISTEM',
+  },
+  {
+    title: 'Ortodontski plan i 3D dijagnostika',
+    description:
+      'Pregled, intraoralni skener i analiza prije početka terapije. Plan terapije sadrži ishod, vremenski okvir i alternativne sisteme — sve definirano prije nego što počne pomak.',
     disciplina: 'PLANIRANJE',
-  },
-  {
-    title: 'Implantološka rehabilitacija',
-    description:
-      'Vraćanje funkcije žvačenja i estetike uz suvremene implantološke sustave i prateće protetske nadgradnje, u okvirima prihvaćenih kliničkih protokola.',
-    disciplina: 'REHABILITACIJA',
   },
 ];
 

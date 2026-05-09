@@ -337,25 +337,65 @@ export default function Concierge() {
           )}
         </AnimatePresence>
 
-        <footer className="mt-20 flex flex-col items-center gap-6 border-t border-pearl/10 pt-16 text-center sm:mt-24 sm:pt-24">
-          <div className="flex max-w-xl flex-col items-center gap-y-4 text-[11px] uppercase tracking-[0.22em] text-pearl/70 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-10 sm:gap-y-3 sm:text-xs sm:tracking-[0.28em] md:gap-x-12 md:tracking-[0.3em]">
-            <span className="inline-flex min-h-[2.75rem] items-center justify-center px-2 text-center sm:min-h-0">
-              {CONTACT.city}, {CONTACT.country}
-            </span>
-            <a
-              href={`tel:${CONTACT.phoneTel}`}
-              className="inline-flex min-h-11 items-center rounded-sm px-4 py-2 transition-colors hover:text-gold focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold/80 md:min-h-10 md:px-5"
-            >
-              {CONTACT.phoneDisplay}
-            </a>
-            <a
-              href={`mailto:${CONTACT.email}`}
-              className="inline-flex min-h-11 items-center rounded-sm px-4 py-2 transition-colors hover:text-gold focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold/80 md:min-h-10 md:px-5"
-            >
-              {CONTACT.email}
-            </a>
+        <footer className="mt-20 border-t border-pearl/10 pt-16 sm:mt-24 sm:pt-24">
+          <div className="grid grid-cols-1 gap-12 text-center sm:grid-cols-3 sm:text-left">
+            <div className="space-y-3">
+              <h3 className="font-body text-[10px] uppercase tracking-[0.32em] text-gold">
+                Lokacija
+              </h3>
+              <address className="not-italic font-body text-sm leading-relaxed text-pearl/85">
+                {CONTACT.street}
+                <br />
+                {CONTACT.postalCode} {CONTACT.city}
+                <br />
+                {CONTACT.country}
+              </address>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="font-body text-[10px] uppercase tracking-[0.32em] text-gold">
+                Kontakt
+              </h3>
+              <div className="flex flex-col gap-2 font-body text-sm text-pearl/85">
+                <a
+                  href={`tel:${CONTACT.phoneTel}`}
+                  className="inline-flex items-center justify-center transition-colors hover:text-gold focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold/80 sm:justify-start"
+                >
+                  {CONTACT.phoneDisplay}
+                </a>
+                <a
+                  href={`mailto:${CONTACT.email}`}
+                  className="inline-flex items-center justify-center transition-colors hover:text-gold focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold/80 sm:justify-start"
+                >
+                  {CONTACT.email}
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="font-body text-[10px] uppercase tracking-[0.32em] text-gold">
+                Radno vrijeme
+              </h3>
+              <dl className="space-y-1 font-body text-sm text-pearl/85">
+                {CONTACT.hours.map((row) => (
+                  <div key={row.days} className="flex flex-col gap-0 sm:flex-row sm:justify-between sm:gap-4">
+                    <dt className="text-pearl/70">{row.days}</dt>
+                    <dd className="tabular-nums">{row.time}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
-          <div className="copper-pattern w-full h-8 opacity-10" aria-hidden />
+
+          <div className="mt-16 flex flex-col items-center gap-6 border-t border-pearl/5 pt-8 sm:flex-row sm:justify-between">
+            <p className="font-body text-[10px] uppercase tracking-[0.32em] text-pearl/50">
+              © {new Date().getFullYear()} Ordinacija Smile · Sarajevo
+            </p>
+            <p className="font-body text-[10px] uppercase tracking-[0.32em] text-pearl/50">
+              Specijalistička ortodontska praksa
+            </p>
+          </div>
+          <div className="copper-pattern mt-8 w-full h-8 opacity-10" aria-hidden />
         </footer>
       </div>
     </section>

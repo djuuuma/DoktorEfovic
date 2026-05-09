@@ -59,20 +59,20 @@ export default function Exhibition() {
         className="relative z-10 mx-auto max-w-[min(94vw,48rem)] pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] text-center sm:max-w-none sm:px-6 md:pb-10"
       >
         <span className="mb-6 block font-body text-[11px] uppercase tracking-[0.28em] text-gold sm:text-xs md:tracking-[0.3em]">
-          Privatna ordinacija dentalne medicine • Sarajevo
+          Specijalistička ortodontska ordinacija • Sarajevo
         </span>
         <h1 className="mb-8 font-heading text-5xl leading-[0.92] tracking-tighter text-pearl text-glow sm:text-6xl md:text-8xl xl:text-9xl">
           Estetska
           <br />
-          <span className="italic">stomatologija</span>
+          <span className="italic">ortodoncija</span>
         </h1>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="font-body text-[11px] uppercase tracking-[0.18em] text-sage sm:text-xs md:tracking-[0.2em]"
+          className="font-body text-[11px] uppercase tracking-[0.18em] text-pearl/75 sm:text-xs md:tracking-[0.2em]"
         >
-          Precizna dijagnostika • Individualno planiranje • Savremeni materijali
+          3D dijagnostika • Individualni plan • Diskretni sistemi
         </motion.p>
       </motion.div>
 
