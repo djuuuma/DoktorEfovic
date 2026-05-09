@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-bright: #E6C25D;
+  --color-bg: #0F1A15;
+  --color-surface: #0A120E;
+  --color-pearl: #F8F6F0;
+  --color-sage: #7C8B82;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Jost", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  @media (pointer: fine) {
+    body.custom-cursor-on {
+      cursor: none;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .copper-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%237C8B82' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
