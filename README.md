@@ -19,6 +19,10 @@ npm run dev
 
 The dev server runs on port **5173**.
 
+### Contact form (`Concierge`)
+
+Point **`VITE_CONCIERGE_FORM_URL`** (in `.env`) at an HTTPS endpoint that accepts **`POST`** with **`application/x-www-form-urlencoded`** fields: **`name`**, **`phone`**, **`service`** (slug), **`service_label`**, **`subject`**. Compatible with typical Formspree-style handlers and Zapier/Make webhooks (configure the hook to read form fields). The site must be allowed by that server’s **CORS** policy for browser submissions.
+
 | Command | Description |
 |--------|-------------|
 | `npm run dev` | Start the Vite dev server |
