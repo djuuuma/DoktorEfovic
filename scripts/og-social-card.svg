@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Ordinacija Smile logo">
+  <rect width="1200" height="630" fill="#0F1A15"/>
+  <!-- Gold smile motif (same curves as favicon, scaled / centered for sharp raster output) -->
+  <g transform="translate(600 312) scale(16) translate(-16 -16)">
+    <path
+      d="M9 15c2.2 3.2 5.2 5 7 5s4.8-1.8 7-5"
+      fill="none"
+      stroke="#D4AF37"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </g>
+  <text
+    x="600"
+    y="478"
+    text-anchor="middle"
+    fill="#F8F6F0"
+    font-family="Georgia, 'Times New Roman', Times, serif"
+    font-size="46"
+    font-weight="500"
+    letter-spacing="0.06em"
+  >
+    Ordinacija Smile
+  </text>
+  <text
+    x="600"
+    y="536"
+    text-anchor="middle"
+    fill="#B8BCB4"
+    font-family="Georgia, 'Times New Roman', Times, serif"
+    font-size="24"
+    font-weight="400"
+    letter-spacing="0.03em"
+    >Specijalist&#269;ka ortodontska ordinacija &#183; Sarajevo</text>
+</svg>
